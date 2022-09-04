@@ -18,7 +18,7 @@ const Menu: React.FC<MenuProps> = ({ handleEdit, id, isFavorite, isCompleted }) 
       <button
         className={style.button}
         onClick={() => dispatch(toggleStatus({ id, isCompleted }))}
-      >{isCompleted ? 'Uncompleted' : `Completed`}
+      >{isCompleted ? 'Uncompleted' : 'Completed'}
       </button>
       <button
         className={isFavorite ? style.activeButton : style.button}
