@@ -1,0 +1,53 @@
+.addTodoItem {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inputWrapper {
+    width: 100%;
+}
+
+
+.field {
+    width: 75%;
+    background-color: #d8d8d8;
+    vertical-align: top;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    outline: none;
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    transition: background-color 0.1s ease-out;
+    border-radius: 7px;
+}
+
+.field:hover{
+    background-color: white;
+}
+
+.field:focus {
+    background-color: white;
+    border: 2px solid #c53727;
+}
+
+
+.addButton {
+    height: 40px;
+    width: 85px;
+    border-radius: 7px;
+    background-color: #c53727;
+    border: none;
+    transition: background-color 0.2s ease-out;
+    color: #d8d8d8;
+}
+
+.addButton:hover{
+    background-color: #92281c;
+    cursor: pointer;
+}
