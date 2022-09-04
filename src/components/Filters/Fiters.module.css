@@ -1,0 +1,26 @@
+.filter {
+    margin-right: 10px;
+}
+.filter input[type=radio] {
+    display: none;
+}
+.filter label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 15px;
+    margin: 2px 0;
+    width: 100%;
+    line-height: 34px;
+    border-radius: 6px;
+    user-select: none;
+}
+
+/* Checked */
+.filter input[type=radio]:checked + label {
+    background: #363636;
+}
+
+/* Hover */
+.filter label:hover {
+    background: #363636;
+}

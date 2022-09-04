@@ -18,6 +18,7 @@ type todo = {
 const TodoList: React.FC<todoListProps> = ({ filteredList }) => {
   return (
     <>
+      <h3>Favorite</h3>
       <ul className={style.itemsWrapper}>
         {
           filteredList.map(todo => (

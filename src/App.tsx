@@ -9,7 +9,7 @@ import TodoAllList from "./components/TodoAllList/TodoAllList";
 
 function App() {
   const dispatch = useAppDispatch();
-  const [filter, setFilter] = useState<string>('');
+  const [filter, setFilter] = useState<string>('all');
   const todos = useAppSelector(state => state.todos.list);
 
   useEffect(() => {
@@ -36,7 +36,6 @@ function App() {
     filteredList = todos.filter(todos => !todos.isCompleted ? todos : null)
   }
 
-  console.log(filteredList);
 
   return (
     <div className="App">
@@ -46,10 +45,12 @@ function App() {
         />
       </aside>
       <section>
-        <h1>Your TodoList</h1>
-        <TodoForm />
-        {filter === 'all' ? <TodoAllList filteredList={todos} /> :
-          <TodoList filteredList={filteredList} />}
+        <div className='formWrapper'>
+          <h1>Your TodoList</h1>
+          <TodoForm />
+          {filter === 'all' ? <TodoAllList filteredList={todos} /> :
+            <TodoList filteredList={filteredList} />}
+        </div>
       </section>
     </div>
   );

@@ -16,9 +16,9 @@ type todo = {
 
 
 const TodoAllList: React.FC<todoListProps> = ({filteredList}) => {
-  console.log(filteredList);
   return (
     <>
+      <h3>Favorite</h3>
       <ul className={style.itemsWrapper}>
         {
           filteredList.map(todo => (
@@ -30,6 +30,7 @@ const TodoAllList: React.FC<todoListProps> = ({filteredList}) => {
           ))
         }
       </ul>
+      <h3>In work</h3>
       <ul className={style.itemsWrapper}>
         {
           filteredList.map(todo => (
@@ -41,6 +42,7 @@ const TodoAllList: React.FC<todoListProps> = ({filteredList}) => {
           ))
         }
       </ul>
+      <h3>Completed</h3>
       <ul className={style.itemsWrapper}>
         {
           filteredList.map(todo => (

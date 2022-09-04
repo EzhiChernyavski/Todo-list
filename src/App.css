@@ -1,17 +1,42 @@
 section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 30px 50px;
 }
 
 aside {
-    padding: 30px 10px 30px 40px;
+    background-color: #242424;
+    font-size: 18px;
+    padding: 150px 30px 30px 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+h1 {
+    align-self: flex-start;
+}
+
+h3 {
+    align-self: flex-start;
+    margin-bottom: 0;
 }
 
 .App {
     position: relative;
-    width: 90%;
     height: 100vh;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 300px auto;
     color: #d8d8d8;
+}
+
+
+
+.formWrapper {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
