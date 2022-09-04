@@ -115,6 +115,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ id, text, isCompleted, isFavorite }
       {isActiveMenu && <Menu
         handleEdit={handleEdit}
         id={id}
+        isCompleted={isCompleted}
         isFavorite={isFavorite}
       />}
     </li>
