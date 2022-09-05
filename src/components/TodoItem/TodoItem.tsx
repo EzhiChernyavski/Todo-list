@@ -98,6 +98,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ id, text, isCompleted, isFavorite }
                 ref={inputRef}
                 onChange={handleChangeText}
               />
+              <button className={style.confirmButton} type='submit'>Confirm</button>
             </form>
           </>
         ) : (
@@ -105,13 +106,13 @@ const TodoItem: React.FC<TodoItemProps> = ({ id, text, isCompleted, isFavorite }
             <span onClick={handleEdit}>{text}</span>
           </>)
       }
-      <img
+      {isEdit || <img
         src={menu}
         alt='menu'
         className={style.imgMenu}
         ref={menuLink}
         onClick={() => setIsActiveMenu(!isActiveMenu)}
-      />
+      />}
       {isActiveMenu && <Menu
         handleEdit={handleEdit}
         id={id}

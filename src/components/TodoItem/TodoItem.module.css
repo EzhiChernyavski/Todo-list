@@ -59,10 +59,11 @@
 
 .editForm {
     width: 100%;
+    display: flex;
 }
 
 .editInput {
-    width: 100%;
+    width: 85%;
     background-color: #1f1f1f;
     color: #747474;
     margin-right: 10px;
@@ -87,6 +88,16 @@
 .editInput:focus {
     background-color: #242424;
     color: white;
+}
+
+.confirmButton {
+    height: 40px;
+    width: 85px;
+    border-radius: 7px;
+    background-color: #c53727;
+    border: none;
+    transition: background-color 0.2s ease-out;
+    color: #d8d8d8;
 }
 
 .imgMenu {
