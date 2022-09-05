@@ -100,6 +100,11 @@
     color: #d8d8d8;
 }
 
+.confirmButton:hover{
+    background-color: #92281c;
+    cursor: pointer;
+}
+
 .imgMenu {
     width: 17px;
     height: 17px;
