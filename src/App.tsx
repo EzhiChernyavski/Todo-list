@@ -7,34 +7,38 @@ import TodoForm from "./components/TodoForm/TodoForm";
 import Filters from "./components/Filters/Filters";
 import TodoAllList from "./components/TodoAllList/TodoAllList";
 
+interface IFilteredListEntry {
+  id: number,
+  text: string,
+  isCompleted: boolean,
+  isFavorite: boolean,
+}
+
+
 function App() {
   const dispatch = useAppDispatch();
   const [filter, setFilter] = useState<string>('all');
+  const [filteredList, setFilteredList] = useState<IFilteredListEntry[]>([])
   const todos = useAppSelector(state => state.todos.list);
+  // let filteredList: IFilteredListEntry[] = [];
 
   useEffect(() => {
     dispatch(fetchTodos())
   }, [dispatch]);
 
+  useEffect(() => {
+    if (filter === 'favorite') {
+      setFilteredList(todos.filter(todos => todos.isFavorite ? todos : null))
+    }
+    if (filter === 'completed') {
+      setFilteredList(todos.filter(todos => todos.isCompleted ? todos : null))
+    }
+    if (filter === 'inWork') {
+      setFilteredList(todos.filter(todos => !todos.isCompleted ? todos : null))
+    }
+  }, [filter])
 
-  interface IFilteredListEntry {
-    id: number,
-    text: string,
-    isCompleted: boolean,
-    isFavorite: boolean,
-  }
 
-  let filteredList: IFilteredListEntry[] = [];
-
-  if (filter === 'favorite') {
-    filteredList = todos.filter(todos => todos.isFavorite ? todos : null)
-  }
-  if (filter === 'completed') {
-    filteredList = todos.filter(todos => todos.isCompleted ? todos : null)
-  }
-  if (filter === 'inWork') {
-    filteredList = todos.filter(todos => !todos.isCompleted ? todos : null)
-  }
 
 
   return (
