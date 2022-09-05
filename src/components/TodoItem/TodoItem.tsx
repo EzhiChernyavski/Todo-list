@@ -102,7 +102,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ id, text, isCompleted, isFavorite }
           </>
         ) : (
           <>
-            <span>{text}</span>
+            <span onClick={handleEdit}>{text}</span>
           </>)
       }
       <img
