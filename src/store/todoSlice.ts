@@ -26,12 +26,12 @@ export const fetchTodos = createAsyncThunk<Todo[], void, { rejectValue: string }
   }
 )
 
-export const addNewTodo = createAsyncThunk<Todo, { todoText: string, id: number  }, { rejectValue: string }>(
+export const addNewTodo = createAsyncThunk<Todo, { todoText: string  }, { rejectValue: string }>(
   'todos/addNewTodo',
-  async function ({todoText, id}, {rejectWithValue}) {
+  async function ({todoText}, {rejectWithValue}) {
     const todo = {
       text: todoText,
-      id: id,
+      id: Date.now(),
       isCompleted: false,
       isFavorite: false,
     }

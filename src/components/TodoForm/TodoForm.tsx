@@ -16,10 +16,9 @@ const TodoForm: React.FC = () => {
   }
 
   const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
-    const id = Date.now();
     event.preventDefault();
-    if (maxLetters > textLength) {
-      dispatch(addNewTodo({todoText, id}));
+    if (maxLetters > textLength && textLength > 0) {
+      dispatch(addNewTodo({todoText}));
       setTodoText('');
     }
   }
