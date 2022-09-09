@@ -52,10 +52,13 @@ const TodoItem: React.FC<TodoItemProps> = ({ id, text, isCompleted, isFavorite }
 
   const submitChangedText = (event: React.FormEvent<HTMLFormElement | HTMLInputElement>) => {
     event.preventDefault()
-    setIsEdit(false);
-    setIsFocus(false);
+    if (todoText.length !== 0) {
+      setIsEdit(false);
+      setIsFocus(false);
 
-    dispatch(submitChangeText({ id, todoText }));
+      dispatch(submitChangeText({ id, todoText }));
+    }
+
   }
 
   const handleEdit = () => {
@@ -98,7 +101,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ id, text, isCompleted, isFavorite }
                 onChange={handleChangeText}
               />
               <button
-                className={style.confirmButton}
+                className={todoText.length > 0 ? style.confirmButton : style.confirmButtonNotActive}
                 type='submit'
               >Confirm
               </button>

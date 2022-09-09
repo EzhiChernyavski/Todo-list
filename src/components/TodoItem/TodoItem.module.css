@@ -100,6 +100,17 @@
     color: #d8d8d8;
 }
 
+.confirmButtonNotActive {
+    height: 40px;
+    width: 85px;
+    border-radius: 7px;
+    background-color: #6b312c;
+    border: none;
+    transition: background-color 0.2s ease-out;
+    color: #b29491;
+    cursor: not-allowed;
+}
+
 .confirmButton:hover{
     background-color: #92281c;
     cursor: pointer;
