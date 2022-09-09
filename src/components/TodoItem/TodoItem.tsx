@@ -27,7 +27,6 @@ const TodoItem: React.FC<TodoItemProps> = ({ id, text, isCompleted, isFavorite }
   }, [isFocus]);
 
 
-
   useEffect(() => {
     if (!isActiveMenu) return;
 
@@ -98,21 +97,25 @@ const TodoItem: React.FC<TodoItemProps> = ({ id, text, isCompleted, isFavorite }
                 ref={inputRef}
                 onChange={handleChangeText}
               />
-              <button className={style.confirmButton} type='submit'>Confirm</button>
+              <button
+                className={style.confirmButton}
+                type='submit'
+              >Confirm
+              </button>
             </form>
           </>
         ) : (
           <>
             <span onClick={handleEdit}>{text}</span>
+            <img
+              src={menu}
+              alt='menu'
+              className={style.imgMenu}
+              ref={menuLink}
+              onClick={() => setIsActiveMenu(!isActiveMenu)}
+            />
           </>)
       }
-      {isEdit || <img
-        src={menu}
-        alt='menu'
-        className={style.imgMenu}
-        ref={menuLink}
-        onClick={() => setIsActiveMenu(!isActiveMenu)}
-      />}
       {isActiveMenu && <Menu
         handleEdit={handleEdit}
         id={id}
